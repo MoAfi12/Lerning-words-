@@ -1,0 +1,143 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap');
+
+
+.container{
+    margin: 20px auto;
+    width: 50%;
+    padding: 10px 20px;
+    background-color: rgb(216, 233, 248);
+    border-radius: 8px;
+}
+.container-element{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+}
+.container-element input{
+outline: none;
+border: none;
+padding: 10px 30px;
+ border-radius: 6px;
+ width: 70%;
+}
+
+.container-element input:hover{
+    border: 2px solid lightgray;
+}
+
+.container-element select{
+    width: 20%;
+    outline: none;
+border: none;
+padding: 7px 15px;
+ border-radius: 6px;
+}
+
+.container-element select option{
+    background-color:azure;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.container-element svg{
+    width: 23px;
+    height: 23px;
+    position: absolute;
+    right: 250px;
+}
+
+.some-All{
+    width: 77%;
+    font-family: 'Raleway', sans-serif;
+}
+
+.some-All >*{
+    margin-bottom: 10px;
+}
+
+.some-All h1{
+    color: coral;
+    font-size: 26px;
+
+}
+
+.some-All h2{
+    color: crimson;
+    font-size: 20px;
+}
+
+.definition{
+    margin: 30px 0;
+    font-family: 'Raleway', sans-serif;
+}
+
+.definition h1{
+    color:brown;
+    margin-bottom: 6px;
+}
+.definition span{
+    color: red;
+    font-weight: 600;
+}
+.check{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.check label{
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.check input{
+height: 20px;
+width: 20px;
+}
+
+.hidden{
+    display: none;
+}
+
+.show{
+    display: initial;
+}
+
+.nav-links{
+    width: 100%;
+    margin: 20px auto;
+}
+
+.nav-links ul{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+}
+
+.nav-links ul li{
+    list-style-type: none;
+}
+
+.nav-links ul li a{
+    text-decoration: none;
+    color: black;
+}
+
+.nav-links ul li a:hover{
+text-decoration: underline;
+color: grey;
+}
+
+.nav-links ul li a:active{
+    color: red;
+}

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<style>
+    .container{
+        width: 40%;
+        margin: 30px auto;
+        font-family: 'Raleway', sans-serif;
+    }
+    .container-element{
+    background-color: rgb(216, 233, 248);
+        border-radius: 7px;
+        padding: 20px 30px;
+        margin: 30px 0;
+    }
+    .container-element .some-All{
+        width: 85%;
+    }
+
+    .some-All h1{
+        color: coral;
+    font-size: 26px;
+    }
+    .some-All h2{
+    color: crimson;
+    font-size: 20px;
+}
+
+    .definition{
+        margin: 30px 0;
+    font-family: 'Raleway', sans-serif;
+    }
+    .definition h1{
+    color:brown;
+}
+
+.container #head-one{
+    text-align: center;
+}
+
+.nav-links{
+    width: 100%;
+    margin: 20px auto;
+    background-color: rgb(216, 233, 248);
+    padding: 1px;
+    border-radius: 7px;
+}
+
+.nav-links ul{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+}
+
+.nav-links ul li{
+    list-style-type: none;
+}
+
+.nav-links ul li a{
+    text-decoration: none;
+    color: black;
+}
+
+.nav-links ul li a:hover{
+text-decoration: underline;
+color: grey;
+}
+
+.nav-links ul li a:active{
+    color: red;
+}
+
+</style>
+
+
+    <div class="container">
+        <div class="nav-links">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Memorized</a></li>
+            </ul>
+        </div>
+        <h1 id="head-one">List Words That We Have Learned</h1>
+
+        <div class="container-element">
+       
+    </div>
+
+
+
+</div>
+
+<script src="./main2.js">
+
+let words = JSON.parse(localStorage.getItem('memorizedWords')) || [];
+console.log(words);
+
+let startNumber = 0;
+let count = 2;
+
+function displayWords() {
+
+    console.log("dunct", words);
+    let displayData = document.querySelector('.container-element');
+
+
+    const batch = words.slice(startIndex, startIndex + count);
+    startIndex += count;
+
+    batch.forEach(word => {
+        console.log(word);
+        const wordData = `
+        <h1>${word.word}</h1>
+        <p><strong>Definition:</strong> ${word.definition}</p>
+        <p><strong>Examples:<br></strong> ${word.examples.join('<br>')} </p>
+        <p><strong>Synonyms:<br></strong> ${word.synonyms.join('<br>')} </p>
+        <p><strong>antonyms:<br></strong> ${word.antonyms.join('<br>')} </p>
+        `;
+        displayData.innerHTML += wordData;
+    });
+}
+
+displayWords();
+
+window.addEventListener('scroll', () => {
+
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+        displayWords();
+    }
+});
+
+</script>
+
+</body>
+</html>
